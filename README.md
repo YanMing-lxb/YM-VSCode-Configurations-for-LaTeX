@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-29 19:56:59 +0800
- * LastEditTime : 2023-07-29 20:48:43 +0800
+ * LastEditTime : 2023-07-29 20:54:10 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : \YM-VSCode-Configurations-for-LaTeX\README.md
  * Description  : 
@@ -28,7 +28,6 @@
 该项目旨在帮助想要使用LaTeX的老师同学们在VSCode中快速的配置好LaTeX Workshop插件，成功实现LaTeX的编译。
 
 本项目主要提供以下内容：
-1. 提供现成可用的LaTeX Workshop配置命令，并讲明如何在VSCode中进行配置；
-2. 对配置命令进行注释，方便初学者理解各个配置命令的作用；
-3. 提供LaTeXMK的配置代码，帮助初学者配置好LaTeXMK这个编译工具；
+1. [LaTeX Workshop配置说明](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX/blob/main/Docs/LaTeX-Workshop%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E.md)；
+2. [LaTeXMK配置说明](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX/blob/main/Docs/LaTeXMK%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E.md)；
 

@@ -15,20 +15,14 @@
  * 
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
- * Date         : 2023-07-29 19:56:59 +0800
- * LastEditTime : 2023-07-29 20:11:47 +0800
+ * Date         : 2023-07-19 13:15:53 +0800
+ * LastEditTime : 2023-07-21 09:25:51 +0800
  * Github       : https://github.com/YanMing-lxb/
- * FilePath     : \YM-VSCode-Configurations-for-LaTeX\README.md
+ * FilePath     : \GUET_Thesis_LaTeX\Docs\转word命令.md
  * Description  : 
  *  -----------------------------------------------------------------------
  -->
 
-# YM VSCode Configurations for LaTeX
-
-该项目旨在帮助想要使用LaTeX的老师同学们在VSCode中快速的配置好LaTeX Workshop插件，成功实现LaTeX的编译。
-
-本项目主要提供以下内容：
-1. 提供现成可用的LaTeX Workshop配置命令，并讲明如何在VSCode中进行配置；
-2. 对配置命令进行注释，方便初学者理解各个配置命令的作用；
-3. 提供LaTeXMK的配置代码，帮助初学者配置好LaTeXMK这个编译工具；
-
+# 配置好pandoc，在CMD中输入以下命令即可得到main.docx文件。
+## 以下命令仅供参考，具体请根据自己的需求修改代码
+pandoc main.tex  -o main.docx --reference-doc model.docx --extract-media=\picture --filter pandoc-crossref --bibliography=reference.bib --citeproc --csl china-national-standard-gb-t-7714-2015-numeric.csl -M autoEqnLabels -M tableEqns -t docx+native_numbering --number-sections

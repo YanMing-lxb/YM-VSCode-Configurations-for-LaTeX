@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-29 19:56:59 +0800
- * LastEditTime : 2023-07-29 21:46:19 +0800
+ * LastEditTime : 2023-07-29 21:49:32 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : \YM-VSCode-Configurations-for-LaTeX\README.md
  * Description  : 
@@ -27,7 +27,7 @@
 
 该项目旨在帮助想要使用LaTeX的老师同学们在VSCode中快速的配置好LaTeX，成功实现LaTeX的编译。
 
-## 基本环境
+## TeX 基本环境
 
 需要在电脑上安装任意一种 TeX 环境，如[TeXLive](http://mirror.ctan.org/systems/texlive/Images/)、[MacTeX](https://www.tug.org/mactex/mactex-download.html)和[MiKTeX](https://miktex.org/download)（以上环境都自动带有 XeLaTeX 引擎，但是不推荐 CTeX），安装有 SimSun 和 SimHei 字体（其实就是宋体和黑体）以及 Times New Roman 英文字体。在 MacOS 系统下编译会自动识别操作系统，使用 Songti SC 和 STHeiti 字体，但需要启用`--shell-escape`编译选项。
 
@@ -54,11 +54,12 @@ LaTeXMK的相关配置如下：
 
 ## LaTeX 转 Word
 
-请看：[转 word 命令](https://github.com/GUET-TeX-Users-Group/)
+LaTeX 转 Word 命令：
+1. [LaTeX 转 Word 命令](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX/blob/main/Docs/LaTeX%E8%BD%ACWord%E5%91%BD%E4%BB%A4.md)
 
 **注意：**
 
-- 使用 $\LaTeX$ 转 Word 是通过 Pandoc 来实现，因此需要配置好 Pandoc；
+- 使用 LaTeX 转 Word 是通过 Pandoc 来实现，因此需要配置好 Pandoc；
 - 目前该命令存在一些问题，欢迎有志之士来补充！
 
 ## 注意事项

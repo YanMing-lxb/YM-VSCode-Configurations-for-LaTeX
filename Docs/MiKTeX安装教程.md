@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-29 20:57:37 +0800
- * LastEditTime : 2023-07-29 20:58:02 +0800
+ * LastEditTime : 2023-07-29 21:05:27 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : \YM-VSCode-Configurations-for-LaTeX\Docs\MiKTeX安装教程.md
  * Description  : 

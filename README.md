@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-29 19:56:59 +0800
- * LastEditTime : 2023-07-29 22:09:17 +0800
+ * LastEditTime : 2023-07-30 15:09:04 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : \YM-VSCode-Configurations-for-LaTeX\README.md
  * Description  : 
@@ -24,8 +24,10 @@
  -->
 
 # YM VSCode Configurations for LaTeX
+---
 
 该项目旨在帮助想要使用LaTeX的老师同学们在VSCode中快速的配置好LaTeX，成功实现LaTeX的编译。
+
 ## LaTeX 本地部署
 ### TeX 基本环境
 
@@ -38,7 +40,7 @@ TeX环境安装教程：
 
 ### Visual Code Studio 编辑器
 
-推荐使用 Visual Code Studio（VSCode）编辑器。
+> ps: 推荐使用 Visual Code Studio（VSCode）编辑器。
 
 配置VSCode编辑器：
 1. VSCode 中安装 LaTeX Workshop 插件；
@@ -46,7 +48,7 @@ TeX环境安装教程：
 
 ### LaTeXMK配置
 
-推荐使用LaTeXMK进行自动编译。
+> ps: 推荐使用LaTeXMK进行自动编译。
 
 LaTeXMK的相关配置如下：
 1. [LaTeXMK配置说明](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX/blob/main/Docs/LaTeXMK%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E.md)；
@@ -54,13 +56,11 @@ LaTeXMK的相关配置如下：
 
 ### LaTeX 转 Word
 
+> ps: 通过Pandoc实现格式的转换，该命令仅供参考。
+
 LaTeX 转 Word 命令：
 1. [LaTeX 转 Word 命令](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX/blob/main/Docs/LaTeX%E8%BD%ACWord%E5%91%BD%E4%BB%A4.md)
 
-**注意：**
-
-- 使用 LaTeX 转 Word 是通过 Pandoc 来实现，因此需要配置好 Pandoc；
-- 目前该命令存在一些问题，欢迎有志之士来补充！
 
 ### 注意事项
 1. 根据[LaTeX Workshop配置说明](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX/blob/main/Docs/LaTeX-Workshop%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E.md)和[LaTeXMK配置说明](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX/blob/main/Docs/LaTeXMK%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E.md)中的教程完成配置后，所有的latex项目编译成功后所生成的PDF文件将被将统一放置`Build`文件夹中，编译过程中所产生的辅助文件也将被统一放置在`Build/Temp`文件夹中，并在编译结束后通过自动删除`Build`文件夹中所有子文件夹的方式清除所有辅助文件；

@@ -16,9 +16,9 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-19 13:15:53 +0800
- * LastEditTime : 2023-07-23 18:25:42 +0800
+ * LastEditTime : 2023-07-30 15:37:45 +0800
  * Github       : https://github.com/YanMing-lxb/
- * FilePath     : \GUET_Thesis_LaTeX\Docs\Visual_Code_Studio_中LaTeX_Workshop的设置说明.md
+ * FilePath     : \YM-VSCode-Configurations-for-LaTeX\Docs\LaTeX-Workshop配置说明.md
  * Description  : 
  *  -----------------------------------------------------------------------
  -->
@@ -441,17 +441,3 @@
   },
 ```
 
-# Indent Rainbow插件配置(可选)
-```json
-  //------------------------------indent-rainbow 配置----------------------------------
-  // Using the light mode
-  "indentRainbow.indicatorStyle": "light",
-  // we use a simple 1 pixel wide line
-  "indentRainbow.lightIndicatorStyleLineWidth": 2,
-  // the same colors as above but more visible
-  "indentRainbow.colors": [
-    "rgba(255,255,64,0.3)",
-    "rgba(127,255,127,0.3)",
-    "rgba(255,127,255,0.3)",
-    "rgba(79,236,236,0.3)"],
-```

@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-29 19:56:59 +0800
- * LastEditTime : 2023-07-30 15:09:04 +0800
+ * LastEditTime : 2023-07-30 15:31:26 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : \YM-VSCode-Configurations-for-LaTeX\README.md
  * Description  : 
@@ -78,5 +78,12 @@ LaTeX 转 Word 命令：
 
 ### VSCode 插件推荐
 
+- indent-rainbow：让缩进变成彩色
+- Project Manager： 方便进行项目分类管理
+- Ultra Math Preview：更好的预览显示公式
+- Word Count CJK: 统计中英文字符
+- LaTeX Utilities： 提供一些更为花哨的LaTeX快捷操作
+- English word hint：提供单词提示并给出解释
+- Code Spell Checker：提供单词拼写检查
 
 

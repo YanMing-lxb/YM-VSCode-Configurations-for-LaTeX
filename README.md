@@ -65,7 +65,8 @@ LaTeX 转 Word 命令：
 ### 注意事项
 1. 根据[LaTeX Workshop配置说明](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX/blob/main/Docs/LaTeX-Workshop%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E.md)和[LaTeXMK配置说明](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX/blob/main/Docs/LaTeXMK%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E.md)中的教程完成配置后，所有的latex项目编译成功后所生成的PDF文件将被将统一放置`Build`文件夹中，编译过程中所产生的辅助文件也将被统一放置在`Build/Temp`文件夹中，并在编译结束后通过自动删除`Build`文件夹中所有子文件夹的方式清除所有辅助文件；
 
-## 工具推荐
+
+## 工具推荐及相关配置说明
 
 ### 写作工具
 
@@ -86,4 +87,8 @@ LaTeX 转 Word 命令：
 - English word hint：提供单词提示并给出解释
 - Code Spell Checker：提供单词拼写检查
 
+### 相关配置
 
+- [Words Count CJK 配置说明](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX/blob/main/Docs/Words-Count-CJK%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E.md)
+- [indent rainbow 配置说明](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX/blob/main/Docs/indent-rainbow%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E.md)
+- [VSCode 可选配置](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX/blob/main/Docs/VSCode%E5%8F%AF%E9%80%89%E9%85%8D%E7%BD%AE.md)

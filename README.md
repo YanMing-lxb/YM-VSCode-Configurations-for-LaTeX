@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-29 19:56:59 +0800
- * LastEditTime : 2023-07-30 15:31:26 +0800
+ * LastEditTime : 2023-07-30 15:52:48 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : \YM-VSCode-Configurations-for-LaTeX\README.md
  * Description  : 
@@ -35,8 +35,10 @@
 
 TeX环境安装教程：
 1. [MiKTeX安装教程](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX/blob/main/Docs/MiKTeX%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B.md);
+2. TeXLive安装教程（待补充）
+3. MacTeX安装教程（待补充）
 
-
+> ps: 希望能有好心人补充TeXLive和MacTeX的安装教程
 
 ### Visual Code Studio 编辑器
 

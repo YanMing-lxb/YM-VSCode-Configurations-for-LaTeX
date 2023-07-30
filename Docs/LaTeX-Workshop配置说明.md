@@ -415,29 +415,4 @@
 
 ```
 
-# VSCode 的一些配置(可选)
-```json
-  //------------------------------VSCocde 配置----------------------------------
-  // 设置工作台为默认高对比度深色主题
-  "workbench.preferredDarkColorTheme": "Default High Contrast", 
-  // 禁用折叠区域有声提示音
-  "audioCues.lineHasFoldedArea": "off", 
-  // 差异对比编辑器中启用自动换行
-  "diffEditor.wordWrap": "on", 
-  // 启用代码编辑器的制表符自动补全功能
-  "editor.tabCompletion": "on", 
-  // 设置默认集成终端为CMD
-  "terminal.integrated.defaultProfile.windows": "Command Prompt", 
-  // 设置工作台配色方案为Monokai主题
-  "workbench.colorTheme": "Monokai", 
-  // 设置工作台图标主题为Material Design风格, 需要自行安装插件
-  "workbench.iconTheme": "material-icon-theme", 
-
-  "workbench.colorCustomizations": {
-    "editor.selectionHighlightBackground": "#eb0a60", // 自定义选择高亮背景颜色为#eb0a60
-    "editor.selectionHighlightBorder": "#9c1f30", // 自定义选择高亮边框颜色为#9c1f30
-    "editor.selectionBackground": "#32ad0d86", // 自定义选择背景颜色为#32ad0d86
-    "comments": "#82e0aa" // 自定义注释颜色为#82e0aa
-  },
-```
 

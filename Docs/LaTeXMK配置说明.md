@@ -16,9 +16,9 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-29 20:34:33 +0800
- * LastEditTime : 2023-07-29 20:46:06 +0800
+ * LastEditTime : 2023-11-23 09:03:36 +0800
  * Github       : https://github.com/YanMing-lxb/
- * FilePath     : \YM-VSCode-Configurations-for-LaTeX\Docs\LaTeXMK的配置说明.md
+ * FilePath     : \YM-VSCode-Configurations-for-LaTeX\Docs\LaTeXMK配置说明.md
  * Description  : 
  *  -----------------------------------------------------------------------
  -->
@@ -60,7 +60,7 @@ $lualatex = "lualatex -shell-escape -file-line-error -halt-on-error -interaction
 # 解决使用-outdir 和 -auxdir 命令时无法找到.bib .bst 文件的问题
 my $project_dir = getcwd(); # 获取当前项目所在路径
 $bibtex = "bibtex -include-directory=\"$project_dir\" %O %S";
-$biber = "biber -include-directory=\"$project_dir\" %O %S";
+$biber = "biber -input-directory=\"$project_dir\" %O %S";
 
 $xdvipdfmx = "xdvipdfmx -E -o %D %O %S";
 

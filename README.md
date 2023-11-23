@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-29 19:56:59 +0800
- * LastEditTime : 2023-11-23 09:07:06 +0800
+ * LastEditTime : 2023-11-23 09:09:30 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : \YM-VSCode-Configurations-for-LaTeX\README.md
  * Description  : 
@@ -31,7 +31,7 @@
 ## LaTeX 本地部署
 ### TeX 基本环境
 
-需要在电脑上安装任意一种 $\TeX$ 环境，如[TeXLive](http://mirror.ctan.org/systems/texlive/Images/)、[MacTeX](https://www.tug.org/mactex/mactex-download.html)和[MiKTeX](https://miktex.org/download)（以上环境都自动带有 XeLaTeX 引擎，但是不推荐 CTeX），安装有 SimSun 和 SimHei 字体（其实就是宋体和黑体）以及 Times New Roman 英文字体。在 MacOS 系统下编译会自动识别操作系统，使用 Songti SC 和 STHeiti 字体，但需要启用`--shell-escape`编译选项。
+需要在电脑上安装任意一种 $\TeX$ 环境，如 [TeXLive](http://mirror.ctan.org/systems/texlive/Images/)、[MacTeX](https://www.tug.org/mactex/mactex-download.html) 和 [MiKTeX](https://miktex.org/download)（以上环境都自动带有 XeLaTeX 引擎，但是不推荐 CTeX），安装有 SimSun 和 SimHei 字体（其实就是宋体和黑体）以及 Times New Roman 英文字体。在 MacOS 系统下编译会自动识别操作系统，使用 Songti SC 和 STHeiti 字体，但需要启用`--shell-escape`编译选项。
 
 TeX环境安装教程：
 1. [MiKTeX安装教程](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX/blob/main/Docs/MiKTeX%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B.md);
@@ -54,7 +54,7 @@ TeX环境安装教程：
 
 LaTeXMK的相关配置如下：
 1. [LaTeXMK配置说明](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX/blob/main/Docs/LaTeXMK%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E.md)；
-2. 如果在 Windows 平台下使用 MiKTeX 还需要安装[Perl 语言解释器](http://strawberryperl.com/)，方可使用 latexmk 进行编译；
+2. 如果在 Windows 平台下使用 MiKTeX 还需要安装 [Perl 语言解释器](http://strawberryperl.com/)，方可使用 latexmk 进行编译；
 
 ### LaTeX 转 Word
 
@@ -65,7 +65,7 @@ LaTeX 转 Word 命令：
 
 
 ### 注意事项
-1. 根据[LaTeX Workshop配置说明](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX/blob/main/Docs/LaTeX-Workshop%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E.md)和[LaTeXMK配置说明](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX/blob/main/Docs/LaTeXMK%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E.md)中的教程完成配置后，所有的 $\LaTeX$ 项目编译成功后所生成的PDF文件将被将统一放置`Build`文件夹中，编译过程中所产生的辅助文件也将被统一放置在`Build/Temp`文件夹中，并在编译结束后通过自动删除`Build`文件夹中所有子文件夹的方式清除所有辅助文件；
+1. 根据 [LaTeX Workshop配置说明](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX/blob/main/Docs/LaTeX-Workshop%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E.md) 和 [LaTeXMK配置说明](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX/blob/main/Docs/LaTeXMK%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E.md) 中的教程完成配置后，所有的 $\LaTeX$ 项目编译成功后所生成的PDF文件将被将统一放置`Build`文件夹中，编译过程中所产生的辅助文件也将被统一放置在`Build/Temp`文件夹中，并在编译结束后通过自动删除`Build`文件夹中所有子文件夹的方式清除所有辅助文件；
 
 
 ## 工具推荐及相关配置说明

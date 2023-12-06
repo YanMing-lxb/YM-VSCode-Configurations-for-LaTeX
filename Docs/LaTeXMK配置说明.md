@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-29 20:34:33 +0800
- * LastEditTime : 2023-12-06 21:03:18 +0800
+ * LastEditTime : 2023-12-06 21:07:49 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : /YM-VSCode-Configurations-for-LaTeX/Docs/LaTeXMK配置说明.md
  * Description  : 
@@ -38,6 +38,8 @@ latexmk 可利用配置文件，自动地进行 pdflatex、xelatex 等 latex 编
 > 2. 用户 RC 文件 （$HOME/.latexmkrc， $Home 是用户目录）
 > 3. 当前项目工作路径的 RC 文件 (文件名是 latexmkrc 或 .latexmkrc)
 > 4. 其他 RC 文件 （需要在命令行中用 -r 选项指定）
+
+> Linux 系统中可以将下文中的系统 RC 文件 重命令为 .latexmkrc 并放在系统盘的 Home 文件夹下。
 
 RC 文件的书写风格有些类似于 Perl ，所以清楚 Perl 的同学应该会更容易看懂 RC 文件，不清楚也没关系，可以直接把下节我的配置文件拷贝过去用即可，里面的注释有一些解释。
 

@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-19 13:15:53 +0800
- * LastEditTime : 2023-12-06 19:49:18 +0800
+ * LastEditTime : 2023-12-06 20:40:49 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : /YM-VSCode-Configurations-for-LaTeX/Docs/LaTeX-Workshop配置说明.md
  * Description  : 
@@ -45,8 +45,6 @@
     //   "command": "latexmk",
     //   "args": [
     //     "-xelatex",
-    //     "-outdir=%OUTDIR%",
-    //     "-auxdir=%OUTDIR%/Temp",
     //     "%DOC%"
     //   ]
     // },
@@ -55,7 +53,6 @@
       "command": "latexmk",
       "args": [
         "-xelatex",
-        "-outdir=%OUTDIR%",
         "%DOC%"
       ]
     },
@@ -64,7 +61,6 @@
       "command": "latexmk",
       "args": [
         "-pdflatex",
-        "-outdir=%OUTDIR%",
         "%DOC%"
       ]
     },
@@ -73,7 +69,6 @@
       "command": "latexmk",
       "args": [
         "-lualatex",
-        "-outdir=%OUTDIR%",
         "%DOC%"
       ]
     },

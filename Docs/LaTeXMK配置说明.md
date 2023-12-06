@@ -16,9 +16,9 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-29 20:34:33 +0800
- * LastEditTime : 2023-11-23 09:03:36 +0800
+ * LastEditTime : 2023-12-06 21:03:18 +0800
  * Github       : https://github.com/YanMing-lxb/
- * FilePath     : \YM-VSCode-Configurations-for-LaTeX\Docs\LaTeXMK配置说明.md
+ * FilePath     : /YM-VSCode-Configurations-for-LaTeX/Docs/LaTeXMK配置说明.md
  * Description  : 
  *  -----------------------------------------------------------------------
  -->
@@ -50,6 +50,13 @@ RC 文件的书写风格有些类似于 Perl ，所以清楚 Perl 的同学应�
 ```perl
 ## 系统latexmk配置文件
 ## 文件名：LatexMK，文件目录: C:\latexmk\
+
+# 加载 Time::HiRes 模块
+use Time::HiRes qw(gettimeofday tv_interval);
+use POSIX qw(floor);
+# 记录开始时间
+my $start_time = [gettimeofday];
+
 # 设置 pdflatex,xelatex,bibtex,biber 选项执行的命令
 # %O, %S 是占位符;
 # %O 代表选项，%S 代表对应命令的源文件
@@ -57,10 +64,9 @@ $pdflatex = "pdflatex -shell-escape -file-line-error -halt-on-error -interaction
 $xelatex = "xelatex -shell-escape -file-line-error -halt-on-error -interaction=nonstopmode -no-pdf -synctex=1 %O %S";
 $lualatex = "lualatex -shell-escape -file-line-error -halt-on-error -interaction=nonstopmode -synctex=1 %O %S";
 
-# 解决使用-outdir 和 -auxdir 命令时无法找到.bib .bst 文件的问题
-my $project_dir = getcwd(); # 获取当前项目所在路径
-$bibtex = "bibtex -include-directory=\"$project_dir\" %O %S";
-$biber = "biber -input-directory=\"$project_dir\" %O %S";
+
+$bibtex = "bibtex %O %S";
+$biber = "biber %O %S";
 
 $xdvipdfmx = "xdvipdfmx -E -o %D %O %S";
 
@@ -81,42 +87,57 @@ sub nlo2nls {
 }
 push @generated_exts, "nlo", "nls";
 
-
-# 生成后缀fls的文件，该文件包含程序读写时的文件列表，1代表开启
-$recorder = 1;
-
-# 设置pdf预览器, 需要把下面的程序路径更换为自己电脑pdf阅读器的路径
-$pdf_previewer = 'start "D:\\Application\\SumatraPDF\\SumatraPDF.exe" %O %S';
-
 # 执行 latexmk -c 或 latexmk -C 时会清空 latex 程序生成的文件（-C 更强，会清空pdf）
 # 除此之外, 可以设置额外的文件拓展，以进行清空
 $clean_ext = "blg idx ind lof lot out toc acn acr alg glg glo gls ist fls log spl dtx nlo nls ilg glsdefs fdb_latexmk";
 
 
-# 编译结束后自动删除Build下的所有文件夹
+# ================================================================================
+# 编译结束后要执行的命令
+# ================================================================================
+
 END {
     use strict;
     use warnings;
-    use File::Path qw(remove_tree);
+    use File::Copy 'move';
+    use File::Path 'rmtree';
 
-    my $build_dir = 'Build';
+    # 指定目标文件夹名称
+    my $folder_name = 'Build';
 
-    # 检查Build文件夹是否存在
-    unless (-d $build_dir) {
-        die "Build directory does not exist.";
+    # 打印执行信息
+    print "================================================================================\n";
+    print "XXXXXXXXXXXXXXXXXXXXXXXXXXXX 开始执行编译以外的附加命令！XXXXXXXXXXXXXXXXXXXXXXXXXXXX\n";
+    print "================================================================================\n";
+
+    # 使用文件测试符检查目标文件夹是否存在
+    if (-d $folder_name) {
+        print "$folder_name 文件夹已存在\n";
+    } else {
+        # 如果不存在，则创建目标文件夹
+        mkdir $folder_name or die "无法创建 $folder_name 文件夹: $!\n";
+        print "$folder_name 文件夹已创建\n";
     }
 
-    # 获取Build文件夹下的所有子文件夹
-    opendir(my $dh, $build_dir) or die "Cannot open directory: $!";
-    my @sub_folders = grep { -d "$build_dir/$_" && ! /^\.{1,2}$/ } readdir($dh);
-    closedir($dh);
-
-    # 删除所有子文件夹
-    foreach my $sub_folder (@sub_folders) {
-        remove_tree("$build_dir/$sub_folder");
+    # 移动以.pdf或.gz结尾的文件到目标文件夹
+    for my $file (glob "*.{pdf,gz}") {
+        move($file, $folder_name) or die "无法移动文件 $file: $!";
+        print "移动文件 $file 到 $folder_name 文件夹\n";
     }
 
-    print "All sub-folders in Build directory have been deleted.\n";
+    # 删除指定文件夹下的所有子文件夹
+    for my $subfolder (glob "$folder_name/*/") {
+        rmtree($subfolder) or warn "无法删除文件夹 $subfolder: $!";
+        print "文件夹 $subfolder 已成功删除\n";
+    }
+
+    # 格式化时间格式
+    my $elapsed = tv_interval($start_time);
+    my $hours = floor($elapsed / 3600);
+    my $minutes = floor(($elapsed % 3600) / 60);
+    my $seconds = $elapsed % 60;
+    print "================================================================================\n";
+    print "编译时长为：" . sprintf("%02d 小时 %02d 分 %02d 秒 ", $hours, $minutes, $seconds) . "总计 $seconds 秒\n";
 }
 
 

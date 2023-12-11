@@ -47,6 +47,7 @@ $clean_ext = "blg idx ind lof lot out toc acn acr alg glg glo gls ist fls log sp
 # ================================================================================
 
 END {
+    use open qw(:std :utf8);
     use strict;
     use warnings;
     use File::Copy 'move';

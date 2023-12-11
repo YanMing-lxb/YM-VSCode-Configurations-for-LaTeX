@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-29 20:34:33 +0800
- * LastEditTime : 2023-12-06 21:07:49 +0800
+ * LastEditTime : 2023-12-11 20:58:40 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : /YM-VSCode-Configurations-for-LaTeX/Docs/LaTeXMK配置说明.md
  * Description  : 
@@ -99,6 +99,7 @@ $clean_ext = "blg idx ind lof lot out toc acn acr alg glg glo gls ist fls log sp
 # ================================================================================
 
 END {
+    use open qw(:std :utf8);
     use strict;
     use warnings;
     use File::Copy 'move';

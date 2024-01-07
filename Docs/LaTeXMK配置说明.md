@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-29 20:34:33 +0800
- * LastEditTime : 2023-12-11 20:58:40 +0800
+ * LastEditTime : 2024-01-07 20:10:28 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : /YM-VSCode-Configurations-for-LaTeX/Docs/LaTeXMK配置说明.md
  * Description  : 
@@ -91,7 +91,7 @@ push @generated_exts, "nlo", "nls";
 
 # 执行 latexmk -c 或 latexmk -C 时会清空 latex 程序生成的文件（-C 更强，会清空pdf）
 # 除此之外, 可以设置额外的文件拓展，以进行清空
-$clean_ext = "blg idx ind lof lot out toc acn acr alg glg glo gls ist fls log spl dtx nlo nls ilg glsdefs fdb_latexmk";
+$clean_ext = "blg idx ind lof lot out toc acn acr alg glg glo gls ist fls log spl dtx nlo nls ilg glsdefs fdb_latexmk synctex synctex.gz spl";
 
 
 # ================================================================================

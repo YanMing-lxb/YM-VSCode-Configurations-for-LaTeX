@@ -18,7 +18,7 @@ $lualatex = "lualatex -shell-escape -file-line-error -halt-on-error -interaction
 $bibtex = "bibtex %O %S";
 $biber = "biber %O %S";
 
-$xdvipdfmx = "xdvipdfmx -E -o %D %O %S";
+$xdvipdfmx = "dvipdfmx -V 1.6 %O %S";
 
 # 编译索引
 $makeindex = "makeindex -s gind.ist %O -o %D %S";
@@ -88,6 +88,6 @@ END {
     my $minutes = floor(($elapsed % 3600) / 60);
     my $seconds = $elapsed % 60;
     print "================================================================================\n";
-    print "编译时长为：" . sprintf("%02d 小时 %02d 分 %02d 秒 ", $hours, $minutes, $seconds) . "总计 $seconds 秒\n";
+    print "编译时长为：" . sprintf("%02d 小时 %02d 分 %02d 秒 ", $hours, $minutes, $seconds) . "总计 $elapsed 秒\n";
 }
 

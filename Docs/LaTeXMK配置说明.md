@@ -16,9 +16,9 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-29 20:34:33 +0800
- * LastEditTime : 2024-01-07 20:10:28 +0800
+ * LastEditTime : 2024-03-09 10:31:06 +0800
  * Github       : https://github.com/YanMing-lxb/
- * FilePath     : /YM-VSCode-Configurations-for-LaTeX/Docs/LaTeXMK配置说明.md
+ * FilePath     : \YM-VSCode-Configurations-for-LaTeX\Docs\LaTeXMK配置说明.md
  * Description  : 
  *  -----------------------------------------------------------------------
  -->
@@ -70,7 +70,7 @@ $lualatex = "lualatex -shell-escape -file-line-error -halt-on-error -interaction
 $bibtex = "bibtex %O %S";
 $biber = "biber %O %S";
 
-$xdvipdfmx = "xdvipdfmx -E -o %D %O %S";
+$xdvipdfmx = "dvipdfmx -V 1.6 %O %S";
 
 # 编译索引
 $makeindex = "makeindex -s gind.ist %O -o %D %S";
@@ -140,7 +140,7 @@ END {
     my $minutes = floor(($elapsed % 3600) / 60);
     my $seconds = $elapsed % 60;
     print "================================================================================\n";
-    print "编译时长为：" . sprintf("%02d 小时 %02d 分 %02d 秒 ", $hours, $minutes, $seconds) . "总计 $seconds 秒\n";
+    print "编译时长为：" . sprintf("%02d 小时 %02d 分 %02d 秒 ", $hours, $minutes, $seconds) . "总计 $elapsed 秒\n";
 }
 
 

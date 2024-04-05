@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-29 20:34:33 +0800
- * LastEditTime : 2024-03-09 10:31:06 +0800
+ * LastEditTime : 2024-04-05 19:11:49 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : \YM-VSCode-Configurations-for-LaTeX\Docs\LaTeXMK配置说明.md
  * Description  : 
@@ -70,7 +70,7 @@ $lualatex = "lualatex -shell-escape -file-line-error -halt-on-error -interaction
 $bibtex = "bibtex %O %S";
 $biber = "biber %O %S";
 
-$xdvipdfmx = "dvipdfmx -V 1.6 %O %S";
+$xdvipdfmx = "dvipdfmx -V 2.0 %O %S";
 
 # 编译索引
 $makeindex = "makeindex -s gind.ist %O -o %D %S";
@@ -91,7 +91,7 @@ push @generated_exts, "nlo", "nls";
 
 # 执行 latexmk -c 或 latexmk -C 时会清空 latex 程序生成的文件（-C 更强，会清空pdf）
 # 除此之外, 可以设置额外的文件拓展，以进行清空
-$clean_ext = "blg idx ind lof lot out toc acn acr alg glg glo gls ist fls log spl dtx nlo nls ilg glsdefs fdb_latexmk synctex synctex.gz spl";
+$clean_ext = "aux bbl bcf blg idx ind lof lot out toc acn acr alg glg glo gls ist fls log spl dtx nlo nls ilg glsdefs run.xml xdv fdb_latexmk spl";
 
 
 # ================================================================================
@@ -133,6 +133,21 @@ END {
         rmtree($subfolder) or warn "无法删除文件夹 $subfolder: $!";
         print "文件夹 $subfolder 已成功删除\n";
     }
+
+    # 删除项目路径下的特定后缀的辅助文件
+    my @file_suffix = qw(aux bcf bcf bak bbl blg idx ilg ind lof log lot nlo nls out toc acn acr alg glg glo gls ist fls log spl xdv run.xml fdb_latexmk spl);
+
+    find(\&process_file, '.');
+
+    sub process_file {
+        my $filename = $_;
+        foreach my $suffix (@file_suffix) {
+            if ($filename =~ m/\.$suffix$/) {
+                unlink($filename) or warn "无法删除文件 $filename: $!";
+            }
+        }
+    }
+    print "清理辅助文件\n";
 
     # 格式化时间格式
     my $elapsed = tv_interval($start_time);

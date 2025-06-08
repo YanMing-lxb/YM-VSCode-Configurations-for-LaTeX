@@ -16,9 +16,9 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-29 20:34:33 +0800
- * LastEditTime : 2024-04-05 19:11:49 +0800
+ * LastEditTime : 2025-06-08 19:49:54 +0800
  * Github       : https://github.com/YanMing-lxb/
- * FilePath     : \YM-VSCode-Configurations-for-LaTeX\Docs\LaTeXMK配置说明.md
+ * FilePath     : /YM-VSCode-Configurations-for-LaTeX/Docs/LaTeXMK配置说明.md
  * Description  : 
  *  -----------------------------------------------------------------------
  -->
@@ -53,19 +53,13 @@ RC 文件的书写风格有些类似于 Perl ，所以清楚 Perl 的同学应�
 ## 系统latexmk配置文件
 ## 文件名：LatexMK，文件目录: C:\latexmk\
 
-# 加载 Time::HiRes 模块
-use Time::HiRes qw(gettimeofday tv_interval);
-use POSIX qw(floor);
-# 记录开始时间
-my $start_time = [gettimeofday];
-
 # 设置 pdflatex,xelatex,bibtex,biber 选项执行的命令
 # %O, %S 是占位符;
 # %O 代表选项，%S 代表对应命令的源文件
+
 $pdflatex = "pdflatex -shell-escape -file-line-error -halt-on-error -interaction=nonstopmode -synctex=1 %O %S";
 $xelatex = "xelatex -shell-escape -file-line-error -halt-on-error -interaction=nonstopmode -no-pdf -synctex=1 %O %S";
 $lualatex = "lualatex -shell-escape -file-line-error -halt-on-error -interaction=nonstopmode -synctex=1 %O %S";
-
 
 $bibtex = "bibtex %O %S";
 $biber = "biber %O %S";
@@ -89,75 +83,21 @@ sub nlo2nls {
 }
 push @generated_exts, "nlo", "nls";
 
+
 # 执行 latexmk -c 或 latexmk -C 时会清空 latex 程序生成的文件（-C 更强，会清空pdf）
 # 除此之外, 可以设置额外的文件拓展，以进行清空
 $clean_ext = "aux bbl bcf blg idx ind lof lot out toc acn acr alg glg glo gls ist fls log spl dtx nlo nls ilg glsdefs run.xml xdv fdb_latexmk spl";
 
-
-# ================================================================================
-# 编译结束后要执行的命令
-# ================================================================================
-
-END {
-    use open qw(:std :utf8);
-    use strict;
-    use warnings;
-    use File::Copy 'move';
-    use File::Path 'rmtree';
-
-    # 指定目标文件夹名称
-    my $folder_name = 'Build';
-
-    # 打印执行信息
-    print "================================================================================\n";
-    print "XXXXXXXXXXXXXXXXXXXXXXXXXXXX 开始执行编译以外的附加命令！XXXXXXXXXXXXXXXXXXXXXXXXXXXX\n";
-    print "================================================================================\n";
-
-    # 使用文件测试符检查目标文件夹是否存在
-    if (-d $folder_name) {
-        print "$folder_name 文件夹已存在\n";
-    } else {
-        # 如果不存在，则创建目标文件夹
-        mkdir $folder_name or die "无法创建 $folder_name 文件夹: $!\n";
-        print "$folder_name 文件夹已创建\n";
-    }
-
-    # 移动以.pdf或.gz结尾的文件到目标文件夹
-    for my $file (glob "*.{pdf,gz}") {
-        move($file, $folder_name) or die "无法移动文件 $file: $!";
-        print "移动文件 $file 到 $folder_name 文件夹\n";
-    }
-
-    # 删除指定文件夹下的所有子文件夹
-    for my $subfolder (glob "$folder_name/*/") {
-        rmtree($subfolder) or warn "无法删除文件夹 $subfolder: $!";
-        print "文件夹 $subfolder 已成功删除\n";
-    }
-
-    # 删除项目路径下的特定后缀的辅助文件
-    my @file_suffix = qw(aux bcf bcf bak bbl blg idx ilg ind lof log lot nlo nls out toc acn acr alg glg glo gls ist fls log spl xdv run.xml fdb_latexmk spl);
-
-    find(\&process_file, '.');
-
-    sub process_file {
-        my $filename = $_;
-        foreach my $suffix (@file_suffix) {
-            if ($filename =~ m/\.$suffix$/) {
-                unlink($filename) or warn "无法删除文件 $filename: $!";
-            }
-        }
-    }
-    print "清理辅助文件\n";
-
-    # 格式化时间格式
-    my $elapsed = tv_interval($start_time);
-    my $hours = floor($elapsed / 3600);
-    my $minutes = floor(($elapsed % 3600) / 60);
-    my $seconds = $elapsed % 60;
-    print "================================================================================\n";
-    print "编译时长为：" . sprintf("%02d 小时 %02d 分 %02d 秒 ", $hours, $minutes, $seconds) . "总计 $elapsed 秒\n";
-}
-
+# 设置输出文件夹位置，不包括pdf文件
+$out_dir = "Build";
+# 设置输出文件夹位置，包括pdf，但是根目录下的pdf还保留
+$out2_dir = "Build";
+# 设置辅助文件夹路径
+$aux_dir  = "Auxiliary";
+# 显示 latexmk 运行时长统计信息
+$show_time = 1;
+# 设置静默模式，1 为开启 0 为关闭
+$silent = 1;
 
 ```
 
